@@ -9,8 +9,10 @@ pipeline {
             }
         }
 
-        post {
-            junit 'test.xml'
+        stage('Report') {
+            steps {
+                junit 'test.xml'
+            }
         }
     }
 }
