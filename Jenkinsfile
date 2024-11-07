@@ -18,7 +18,7 @@ pipeline {
             steps {
                 bat '''
                 source venv/bin/activate
-                pytest first_test.py -vs --junitxml=test.xml
+                pytest first_test.py -v --junitxml=test.xml
                 '''
             }
         }
