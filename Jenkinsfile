@@ -2,11 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Start') {
+        stage('Test') {
             steps {
                 echo "Let's Start Testing"
-                bat 'python try.py'
+                bat 'pytest first_test.py --junitxml=test.xml'
             }
+        }
+
+        post {
+            junit 'test.xml'
         }
     }
 }
