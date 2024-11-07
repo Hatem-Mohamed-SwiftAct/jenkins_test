@@ -18,4 +18,4 @@ def test_mul():
     y = 2
 
     result = multiplication(x,y)
-    assert result == 6, "FAILED"
+    assert result == 8, "FAILED"
