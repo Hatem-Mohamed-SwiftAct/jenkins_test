@@ -1,13 +1,12 @@
 pipeline {
-    agent {label 'Hatem_Salah'}
+    agent {label 'Test'}
 
     stages {
         stage('Setup') {
             steps {
-                echo "Let's Start Testing"
+                echo "Let's Start Setup"
 
                 bat '''
-
                 pip install pytest
                 '''
             }
@@ -22,6 +21,7 @@ pipeline {
                 }
             }
         }
+        
         stage('Report') {
             steps {
                 junit 'test.xml'
