@@ -1,5 +1,5 @@
 pipeline {
-    agent {Hatem_Salah}
+    agent {label 'Hatem_Salah'}
 
     stages {
         stage('Setup') {
