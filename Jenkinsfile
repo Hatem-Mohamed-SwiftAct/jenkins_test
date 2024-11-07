@@ -5,7 +5,7 @@ pipeline {
         stage('Start') {
             steps {
                 echo "Let's Start Testing"
-                python try.py
+                bat 'python try.py'
             }
         }
     }
