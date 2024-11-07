@@ -15,12 +15,13 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat '''
-                pytest first_test.py -vs --junitxml=test.xml
-                '''
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    bat '''
+                    pytest first_test.py -vs --junitxml=test.xml
+                    '''
+                }
             }
         }
-
         stage('Report') {
             steps {
                 junit 'test.xml'
