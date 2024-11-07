@@ -2,10 +2,24 @@ pipeline {
     agent any
 
     stages {
-        stage('Test') {
+        stage('Setup') {
             steps {
                 echo "Let's Start Testing"
-                bat 'pytest first_test.py --junitxml=test.xml'
+
+                bat '''
+                python -m venv venv
+                source venv/bin/activate
+                pip install pytest
+                '''
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat '''
+                source venv/bin/activate
+                pytest first_test.py --junitxml=test.xml
+                '''
             }
         }
 
