@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent Hatem_Salah
 
     stages {
         stage('Setup') {
