@@ -11,4 +11,11 @@ def test_sum():
     y = 2
 
     result = sum(x,y)
-    assert result == 5, "It Failed"
+    assert result == 3, "It Failed"
+
+def test_mul():
+    x = 3
+    y = 2
+
+    result = multiplication(x,y)
+    assert result == 6, "FAILED"
