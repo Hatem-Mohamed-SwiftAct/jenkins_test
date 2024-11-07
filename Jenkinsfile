@@ -7,8 +7,7 @@ pipeline {
                 echo "Let's Start Testing"
 
                 bat '''
-                python -m venv venv
-                source venv/bin/activate
+
                 pip install pytest
                 '''
             }
@@ -17,8 +16,7 @@ pipeline {
         stage('Test') {
             steps {
                 bat '''
-                source venv/bin/activate
-                pytest first_test.py -v --junitxml=test.xml
+                pytest first_test.py -vs --junitxml=test.xml
                 '''
             }
         }
